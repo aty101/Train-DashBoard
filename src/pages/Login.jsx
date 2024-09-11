@@ -20,19 +20,21 @@ export default function Login() {
           onSubmit={(e) => e.preventDefault()}
         >
           <div className="flex flex-col justify-between gap-4">
-            <Input type={"email"} state={state1} setState={setState1}></Input>
+            <Input
+              type={"email"}
+              state={state1}
+              setState={(e) => setState1(e.target.value)}
+            ></Input>
             <Input
               type={"password"}
               state={state2}
-              setState={setState2}
+              setState={(e) => setState2(e.target.value)}
             ></Input>
           </div>
           <button
             className="bg-sky-600 text-sky-50 p-3 text-lg font-semibold text-center disabled:cursor-not-allowed"
             disabled={state1 !== data[0]?.email || state2 !== data[0]?.password}
-            onClick={() => 
-              navigate("temp")
-            }
+            onClick={() => navigate("temp")}
           >
             Login
           </button>
