@@ -1,8 +1,13 @@
+
 // import dashboardData from "./data/products";
 // import { useState, useEffect } from "react";
 import CustomeRouterProvider from "./Providers/RouterProvider";
 
+
+import { userData } from "./data/userData";
+import { shirtsData } from "./data/shirtsData";
 function App() {
+
   // const [data, setData] = useState(() => {
   //   const storedData = localStorage.getItem("dashboardData");
   //   return storedData ? JSON.parse(storedData) : dashboardData;
@@ -14,6 +19,7 @@ function App() {
   // }, [data]);
 
   return <CustomeRouterProvider />;
+
 }
 
 export default App;
