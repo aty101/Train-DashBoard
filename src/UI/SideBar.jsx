@@ -12,7 +12,7 @@ function sideBar() {
         <NavLink
           to={link.path}
           className={({ isActive }) =>
-            `my-2 p-2 rounded ${
+            `my-2 p-2 rounded  ${
               isActive ? "bg-sky-900 text-white" : "hover:bg-sky-100"
             }`
           }

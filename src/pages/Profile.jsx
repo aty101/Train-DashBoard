@@ -1,12 +1,6 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
+import ProfileContent from "../features/ProfileContent";
 function Profile() {
-  return (
-    <div>
-        <h1>Profile</h1>
-        {/* <FontAwesomeIcon icon={faCircleUser} spin size='6x'/> */}
-    </div>
-)
+  return <ProfileContent />;
 }
 
-export default Profile
+export default Profile;

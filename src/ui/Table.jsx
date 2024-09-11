@@ -1,8 +1,8 @@
 import TableBodyCell from "./TableBodyCell";
 import TableHeadCell from "./TableHeadCell";
-function Table({ data }) {
+function Table({ data, handleEditWindowOpen, handleDeleteWindowOpen, setId }) {
   return (
-    <div className="w-full flex bg-sky-50 p-5 justify-between items-center">
+    <div className="w-full flex bg-white p-5 justify-between items-center">
       <table className="table-auto w-full overflow-scroll">
         <thead className="capitalize ">
           <tr className="bg-sky-950">
@@ -19,12 +19,24 @@ function Table({ data }) {
                 <TableBodyCell>{item.name}</TableBodyCell>
                 <TableBodyCell>{item.price}</TableBodyCell>
                 <TableBodyCell>
-                  <button className="capitalize text-sky-50  bg-blue-500 py-2 rounded-md px-6">
+                  <button
+                    onClick={() => {
+                      handleEditWindowOpen();
+                      setId(item.id);
+                    }}
+                    className="capitalize text-sky-50  bg-blue-500 py-2 rounded-md px-6"
+                  >
                     edit
                   </button>
                 </TableBodyCell>
                 <TableBodyCell>
-                  <button className="capitalize text-sky-50 bg-red-600 py-2 rounded-md px-6">
+                  <button
+                    onClick={() => {
+                      handleDeleteWindowOpen();
+                      setId(item.id);
+                    }}
+                    className="capitalize text-sky-50 bg-red-600 py-2 rounded-md px-6"
+                  >
                     delete
                   </button>
                 </TableBodyCell>
