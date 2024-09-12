@@ -4,11 +4,16 @@ import Profile from "../pages/Profile";
 import Shirts from "../pages/Shirts";
 import Pants from "../pages/Pants";
 import Sneakers from "../pages/Sneakers";
+import Login from "../pages/Login";
 // import ProductLayout from "../UI/ProductLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/home",
     element: <Home />,
     children: [
       {

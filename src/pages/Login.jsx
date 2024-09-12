@@ -34,7 +34,10 @@ export default function Login() {
           <button
             className="bg-sky-600 text-sky-50 p-3 text-lg font-semibold text-center disabled:cursor-not-allowed"
             disabled={state1 !== data[0]?.email || state2 !== data[0]?.password}
-            onClick={() => navigate("temp")}
+            onClick={() => {
+              navigate("home");
+              localStorage.setItem("currentUser", JSON.stringify(data[0]));
+            }}
           >
             Login
           </button>
