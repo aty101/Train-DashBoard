@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function Input({ type, state, setState }) {
   if (type.includes("description")) {
     return (

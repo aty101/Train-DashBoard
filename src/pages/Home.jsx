@@ -1,11 +1,11 @@
 import Header from "../UI/Header";
 import SideBar from "../UI/SideBar";
-import ProductLayout from "../UI/ProductLayout";
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import Profile from "./Profile";
 
 function Home() {
   const location = useLocation();
-  console.log(location);
+
   return (
     <div className="h-full">
       <Header />
@@ -13,7 +13,7 @@ function Home() {
         <aside className="h-full bg-white">
           <SideBar />
         </aside>
-        {location.pathname !== "/profile" ? <ProductLayout /> : null}
+        {location.pathname !== "/profile" ? <Outlet /> : <Profile />}
       </main>
     </div>
   );

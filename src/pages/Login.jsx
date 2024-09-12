@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Input from "../ui/Input";
+import Input from "../UI/Input";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const [state1, setState1] = useState("");
-  const [state2, setState2] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [data, setData] = useState("");
   useEffect(() => {
     const res = localStorage.getItem("user");
@@ -22,19 +22,22 @@ export default function Login() {
           <div className="flex flex-col justify-between gap-4">
             <Input
               type={"email"}
-              state={state1}
-              setState={(e) => setState1(e.target.value)}
+              state={email}
+              setState={(e) => setEmail(e.target.value)}
             ></Input>
             <Input
               type={"password"}
-              state={state2}
-              setState={(e) => setState2(e.target.value)}
+              state={password}
+              setState={(e) => setPassword(e.target.value)}
             ></Input>
           </div>
           <button
             className="bg-sky-600 text-sky-50 p-3 text-lg font-semibold text-center disabled:cursor-not-allowed"
-            disabled={state1 !== data[0]?.email || state2 !== data[0]?.password}
-            onClick={() => navigate("temp")}
+            disabled={email !== data[0]?.email || password !== data[0]?.password}
+            onClick={() => {
+              navigate("shirts");
+              localStorage.setItem("currentUser", JSON.stringify(data[0]));
+            }}
           >
             Login
           </button>

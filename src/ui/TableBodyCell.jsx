@@ -1,5 +1,4 @@
-import React from "react";
-
+/* eslint-disable react/prop-types */
 export default function TableBodyCell({ children }) {
   return (
     <td className="py-6 font-semibold text-center border-b border-sky-100 text-sky-950">

@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import Input from "./Input";
 
-function EditWindow({ closePopUpWindow }) {
+function EditWindow({ closePopUpWindow, handleItemEdit, currentId }) {
   const [{ name, price, description }, setState] = useState({
     name: "",
     price: "",
@@ -15,7 +16,7 @@ function EditWindow({ closePopUpWindow }) {
       <form
         onSubmit={(e) => {
           e.defaultPrevented();
-          handleItemAdd(
+          handleItemEdit(
             Math.floor(Math.random() * 1000000) + 1,
             name,
             price,
@@ -29,7 +30,7 @@ function EditWindow({ closePopUpWindow }) {
           ✖
         </button>
         <h2 className="text-2xl font-bold border-b pb-1 border-b-black">
-          Add Item
+          Edit Item
         </h2>
         <div className="flex flex-col gap-3">
           <Input
@@ -63,16 +64,9 @@ function EditWindow({ closePopUpWindow }) {
         <button
           className="capitalize bg-blue-700 text-blue-50 p-2 rounded-md mb-2"
           type="submit"
-          onClick={() =>
-            handleItemEdit(
-              Math.floor(Math.random() * 1000000) + 1,
-              name,
-              price,
-              description
-            )
-          }
+          onClick={() => handleItemEdit(currentId, name, price, description)}
         >
-          add item
+          edit item
         </button>
       </form>
     </div>
